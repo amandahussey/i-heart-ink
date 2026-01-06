@@ -7,14 +7,16 @@ import Nav from "./Nav";
 import ScrollToTop from "./ScrollToTop";
 import Home from "./Home";
 
+import "./App.css";
+
 function App() {
   return (
     <HashRouter>
       <ThemeProvider theme={theme}>
         <Stack
           minHeight="100vh"
-          width="100vw"
-          style={{ background: "black", color: "#E6FFFE" }}
+          width="100%"
+          style={{ background: "black", color: "#E6FFFE", paddingBottom: 40 }}
         >
           <Nav />
           <ScrollToTop />

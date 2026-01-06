@@ -3,8 +3,7 @@ import Container from "@mui/material/Container";
 import Button from "@mui/material/Button";
 import { Box, IconButton, Stack, useMediaQuery, useTheme } from "@mui/material";
 import { Instagram } from "@mui/icons-material";
-
-const INSTAGRAM_HANDLE = "iheartink_";
+import { INSTAGRAM_HANDLE } from "./consts";
 
 function Nav() {
   const theme = useTheme();

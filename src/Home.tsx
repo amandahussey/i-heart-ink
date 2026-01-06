@@ -1,5 +1,6 @@
 import { Stack } from "@mui/material";
 import iHeartInk from "./assets/i-heart-ink.jpg";
+import Gallery from "./Gallery";
 
 const Home = () => {
   return (
@@ -12,6 +13,7 @@ const Home = () => {
           objectFit: "contain",
         }}
       />
+      <Gallery />
     </Stack>
   );
 };
