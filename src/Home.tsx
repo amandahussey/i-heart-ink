@@ -9,7 +9,7 @@ const Home = () => {
         src={iHeartInk}
         alt="I Heart Ink Logo"
         style={{
-          height: 360,
+          height: "50vh",
           objectFit: "contain",
         }}
       />

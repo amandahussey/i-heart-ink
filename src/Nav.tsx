@@ -12,9 +12,9 @@ function Nav() {
   const navButtonStyle = {
     my: 2,
     display: "block",
-    fontSize: isXs ? 16 : undefined,
+    fontSize: isXs ? 16 : 20,
     backgroundcolor: "primary",
-    backgroundImage: `linear-gradient(to bottom, ${theme.palette.primary.main}, white)`,
+    backgroundImage: `linear-gradient(to bottom, ${theme.palette.secondary.light}, ${theme.palette.secondary.dark})`,
     backgroundSize: "100%",
     backgroundRepeat: "repeat",
     backgroundClip: "text",
@@ -25,22 +25,28 @@ function Nav() {
   return (
     <Container maxWidth="xl">
       <Toolbar disableGutters>
-        {/* Separate home link from other buttons */}
+        {/* Separate main buttons from instagram */}
         <Stack
           direction="row"
           alignItems="center"
           justifyContent="center"
           flexGrow={1}
-          spacing={3}
         >
-          {/* Work */}
-          <Button sx={navButtonStyle}>Work</Button>
+          <Stack
+            direction="row"
+            spacing={4}
+            flexGrow={1}
+            justifyContent="center"
+          >
+            {/* Work */}
+            <Button sx={navButtonStyle}>Work</Button>
 
-          {/* Artist */}
-          <Button sx={navButtonStyle}>Artist</Button>
+            {/* Artist */}
+            <Button sx={navButtonStyle}>Artist</Button>
 
-          {/* Booking */}
-          <Button sx={navButtonStyle}>Booking</Button>
+            {/* Booking */}
+            <Button sx={navButtonStyle}>Booking</Button>
+          </Stack>
 
           {/* Instagram */}
           <Box alignSelf="center">
@@ -48,7 +54,7 @@ function Nav() {
               href={`https://www.instagram.com/${INSTAGRAM_HANDLE}/`}
               target="_blank"
             >
-              <Instagram fontSize="small" sx={{ color: "primary.main" }} />
+              <Instagram fontSize="small" sx={{ color: "primary.light" }} />
             </IconButton>
           </Box>
         </Stack>

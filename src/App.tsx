@@ -26,7 +26,7 @@ function App() {
               style={{ top: "10%", left: "10%" }}
             ></div>
             <div
-              className="streak-small streak-orange"
+              className="streak-small streak-blue"
               style={{ top: "20%", left: "15%" }}
             ></div>
             <div
@@ -38,7 +38,7 @@ function App() {
               style={{ top: "10%", right: "20%" }}
             ></div>
             <div
-              className="streak-small streak-orange"
+              className="streak-small streak-blue"
               style={{ top: "20%", right: "15%" }}
             ></div>
             <div

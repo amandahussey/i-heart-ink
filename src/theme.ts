@@ -9,7 +9,7 @@ export const theme = createTheme({
     },
     secondary: {
       main: "#FF9C00",
-      dark: "#FF5A22",
+      dark: "#FF5F2A",
     },
   },
   typography: {
