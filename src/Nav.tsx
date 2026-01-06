@@ -31,6 +31,7 @@ function Nav() {
           alignItems="center"
           justifyContent="center"
           flexGrow={1}
+          spacing={3}
         >
           {/* Work */}
           <Button sx={navButtonStyle}>Work</Button>

@@ -1,12 +1,52 @@
 html,
 body {
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
-  background: black;
+  background-color: black;
 }
 
 #root {
   width: 100%;
-  background: black;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  height: 900px;
+  overflow: hidden;
+  position: absolute;
+  width: 100%;
+}
+
+.streak-big {
+  opacity: 0.9;
+  position: absolute;
+  height: 90vh;
+  width: 30px;
+}
+
+.streak-small {
+  opacity: 1;
+  position: absolute;
+  height: 50vh;
+  width: 20px;
+}
+
+.streak-blue {
+  background: linear-gradient(
+    -90deg,
+    #08f 0%,
+    #0068ff 30%,
+    rgba(0, 104, 255, 0.5) 100%
+  );
+  mask-image: radial-gradient(closest-side, #fff 30%, transparent 100%);
+  filter: blur(50px);
+}
+
+.streak-orange {
+  background: linear-gradient(-90deg, #ff9c00 0%, #ff5a22 30%, #b32515 100%);
+  mask-image: radial-gradient(closest-side, #fff 30%, transparent 100%);
+  filter: blur(50px);
 }

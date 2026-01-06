@@ -20,6 +20,33 @@ function App() {
         >
           <Nav />
           <ScrollToTop />
+          <div className="container">
+            <div
+              className="streak-big streak-blue"
+              style={{ top: "10%", left: "10%" }}
+            ></div>
+            <div
+              className="streak-small streak-orange"
+              style={{ top: "20%", left: "15%" }}
+            ></div>
+            <div
+              className="streak-small streak-blue"
+              style={{ top: "15%", left: "20%" }}
+            ></div>
+            <div
+              className="streak-small streak-blue"
+              style={{ top: "10%", right: "20%" }}
+            ></div>
+            <div
+              className="streak-small streak-orange"
+              style={{ top: "20%", right: "15%" }}
+            ></div>
+            <div
+              className="streak-big streak-blue"
+              style={{ top: "15%", right: "10%" }}
+            ></div>
+          </div>
+
           <Routes>
             {/* <Route path="/artist" element={<About />} />
             <Route path="/booking" element={<Booking />} />
