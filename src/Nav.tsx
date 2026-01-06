@@ -10,6 +10,19 @@ function Nav() {
   const theme = useTheme();
   const isXs = useMediaQuery(theme.breakpoints.down(390));
 
+  const navButtonStyle = {
+    my: 2,
+    display: "block",
+    fontSize: isXs ? 16 : undefined,
+    backgroundcolor: "primary",
+    backgroundImage: `linear-gradient(to bottom, ${theme.palette.primary.main}, white)`,
+    backgroundSize: "100%",
+    backgroundRepeat: "repeat",
+    backgroundClip: "text",
+    WebkitBackgroundClip: "text",
+    WebkitTextFillColor: "transparent",
+  };
+
   return (
     <Container maxWidth="xl">
       <Toolbar disableGutters>
@@ -21,25 +34,13 @@ function Nav() {
           flexGrow={1}
         >
           {/* Work */}
-          <Button
-            sx={{ my: 2, display: "block", fontSize: isXs ? 16 : undefined }}
-          >
-            Work
-          </Button>
+          <Button sx={navButtonStyle}>Work</Button>
 
           {/* Artist */}
-          <Button
-            sx={{ my: 2, display: "block", fontSize: isXs ? 16 : undefined }}
-          >
-            Artist
-          </Button>
+          <Button sx={navButtonStyle}>Artist</Button>
 
           {/* Booking */}
-          <Button
-            sx={{ my: 2, display: "block", fontSize: isXs ? 16 : undefined }}
-          >
-            Booking
-          </Button>
+          <Button sx={navButtonStyle}>Booking</Button>
 
           {/* Instagram */}
           <Box alignSelf="center">
@@ -47,7 +48,7 @@ function Nav() {
               href={`https://www.instagram.com/${INSTAGRAM_HANDLE}/`}
               target="_blank"
             >
-              <Instagram fontSize="small" />
+              <Instagram fontSize="small" sx={{ color: "primary.main" }} />
             </IconButton>
           </Box>
         </Stack>
