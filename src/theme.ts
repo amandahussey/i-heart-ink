@@ -13,7 +13,7 @@ export const theme = createTheme({
     },
   },
   typography: {
-    fontFamily: ["Delius", "Helvetica", "Arial", "serif"].join(","),
+    fontFamily: ["Chivo Mono", "monospace"].join(","),
     fontSize: 18,
   },
 });
