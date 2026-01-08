@@ -14,7 +14,7 @@ body {
 }
 
 .container {
-  height: 900px;
+  height: 90vh;
   overflow: hidden;
   position: fixed;
   width: 100%;
