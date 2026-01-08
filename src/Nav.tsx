@@ -16,6 +16,7 @@ import { useContext } from "react";
 function Nav() {
   const theme = useTheme();
   const isXs = useMediaQuery(theme.breakpoints.down(390));
+  const isSm = useMediaQuery(theme.breakpoints.down("sm"));
 
   const { activeTab, setActiveTab, startOfWorkRef } = useContext(NavContext);
 
@@ -47,7 +48,10 @@ function Nav() {
   };
 
   return (
-    <Container maxWidth="xl" style={{}}>
+    <Container
+      maxWidth="xl"
+      style={{ position: "fixed", background: "black", alignSelf: "center" }}
+    >
       <Toolbar disableGutters>
         {/* Separate main buttons from instagram */}
         <Stack
@@ -77,7 +81,11 @@ function Nav() {
           </Stack>
 
           {/* Instagram */}
-          <Box alignSelf="center">
+          <Box
+            alignSelf="center"
+            position={isSm ? "relative" : "absolute"}
+            right={isSm ? 0 : 16}
+          >
             <IconButton
               href={`https://www.instagram.com/${INSTAGRAM_HANDLE}/`}
               target="_blank"
