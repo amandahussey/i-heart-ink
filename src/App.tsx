@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { HashRouter, Route, Routes } from "react-router-dom";
-import { Stack, ThemeProvider } from "@mui/material";
+import { Stack, ThemeProvider, useMediaQuery } from "@mui/material";
 
 import { theme } from "./theme";
 
@@ -12,6 +12,7 @@ import { NavContext } from "./NavContext";
 import "./App.css";
 
 function App() {
+  const isSm = useMediaQuery(theme.breakpoints.down("sm"));
   const [activeTab, setActiveTab] = useState(0);
 
   return (
@@ -30,19 +31,19 @@ function App() {
               ></div>
               <div
                 className="streak-small streak-blue"
-                style={{ top: "20%", left: "15%" }}
+                style={{ top: "20%", left: isSm ? "20%" : "15%" }}
               ></div>
               <div
                 className="streak-small streak-blue"
-                style={{ top: "15%", left: "20%" }}
+                style={{ top: "15%", left: isSm ? "25%" : "20%" }}
               ></div>
               <div
                 className="streak-small streak-blue"
-                style={{ top: "10%", right: "20%" }}
+                style={{ top: "10%", right: isSm ? "25%" : "20%" }}
               ></div>
               <div
                 className="streak-small streak-blue"
-                style={{ top: "20%", right: "15%" }}
+                style={{ top: "20%", right: isSm ? "20%" : "15%" }}
               ></div>
               <div
                 className="streak-big streak-blue"
