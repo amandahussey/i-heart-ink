@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { HashRouter, Route, Routes } from "react-router-dom";
 import { Stack, ThemeProvider, useMediaQuery } from "@mui/material";
 
@@ -14,11 +14,14 @@ import "./App.css";
 function App() {
   const isSm = useMediaQuery(theme.breakpoints.down("sm"));
   const [activeTab, setActiveTab] = useState(0);
+  const startOfWorkRef = useRef(null as null | HTMLElement);
 
   return (
     <HashRouter>
       <ThemeProvider theme={theme}>
-        <NavContext.Provider value={{ activeTab, setActiveTab }}>
+        <NavContext.Provider
+          value={{ activeTab, setActiveTab, startOfWorkRef }}
+        >
           <Stack
             minHeight="100vh"
             width="100%"

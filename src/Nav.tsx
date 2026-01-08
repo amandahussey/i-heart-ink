@@ -17,7 +17,7 @@ function Nav() {
   const theme = useTheme();
   const isXs = useMediaQuery(theme.breakpoints.down(390));
 
-  const { activeTab, setActiveTab } = useContext(NavContext);
+  const { activeTab, setActiveTab, startOfWorkRef } = useContext(NavContext);
 
   const navItems = [
     { label: "Work", path: "/work" },
@@ -27,6 +27,9 @@ function Nav() {
 
   const handleClickNavItem = (index: number) => {
     setActiveTab(index);
+    if (index === 0 && startOfWorkRef?.current) {
+      startOfWorkRef.current.scrollIntoView({ behavior: "smooth" });
+    }
   };
 
   const navButtonStyle = {
