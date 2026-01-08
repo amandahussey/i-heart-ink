@@ -2,6 +2,8 @@ import { Stack } from "@mui/material";
 import jesus from "./assets/jesus.jpg";
 import queen from "./assets/queen.jpg";
 
+import "./Gallery.css";
+
 const IMAGES = [
   {
     src: jesus,
@@ -13,17 +15,9 @@ const IMAGES = [
 
 const Gallery = () => {
   return (
-    <Stack spacing={4}>
+    <Stack spacing={10} className="gallery">
       {IMAGES.map((img) => (
-        <img
-          key={img.src}
-          src={img.src}
-          loading="lazy"
-          style={{
-            width: 300,
-            objectFit: "contain",
-          }}
-        />
+        <img key={img.src} src={img.src} loading="lazy" />
       ))}
     </Stack>
   );

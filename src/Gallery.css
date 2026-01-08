@@ -1,0 +1,11 @@
+.gallery img:hover {
+  filter: contrast(1) saturate(1);
+}
+
+.gallery img {
+  filter: contrast(0.96) saturate(0.98);
+  transition: filter 0.6s ease, transform 0.6s ease;
+  border-radius: 2px 6px 2px 6px;
+  height: 40vh;
+  object-fit: "contain";
+}
