@@ -15,7 +15,6 @@ import { useContext } from "react";
 
 function Nav() {
   const theme = useTheme();
-  const isXs = useMediaQuery(theme.breakpoints.down(390));
   const isSm = useMediaQuery(theme.breakpoints.down("sm"));
 
   const { activeTab, setActiveTab, startOfWorkRef } = useContext(NavContext);

@@ -1,18 +1,3 @@
-html,
-body {
-  box-sizing: border-box;
-  background-color: black;
-}
-
-#root {
-  width: 100%;
-}
-
-body {
-  margin: 0;
-  padding: 0;
-}
-
 .container {
   height: 90vh;
   overflow: hidden;
