@@ -7,7 +7,7 @@ import { theme } from "../theme";
 import Nav from "./Nav";
 import ScrollToTop from "./ScrollToTop";
 import Home from "./Home";
-import { NavContext } from "./NavContext";
+import { NavContext } from "../contexts/NavContext";
 import LightEffect from "./LightEffect";
 import Footer from "./Footer";
 

@@ -9,7 +9,7 @@ import {
 } from "@mui/material";
 import { Instagram } from "@mui/icons-material";
 import { INSTAGRAM_HANDLE } from "../consts";
-import { NavContext } from "./NavContext";
+import { NavContext } from "../contexts/NavContext";
 import { useContext } from "react";
 import IconButtonWithGradient from "./IconButtonWithGradient";
 
