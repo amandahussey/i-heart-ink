@@ -2,7 +2,6 @@ import {
   Container,
   Button,
   Box,
-  IconButton,
   Stack,
   Toolbar,
   useMediaQuery,
@@ -12,9 +11,7 @@ import { Instagram } from "@mui/icons-material";
 import { INSTAGRAM_HANDLE } from "./consts";
 import { NavContext } from "./NavContext";
 import { useContext } from "react";
-
-const LIGHT_ORANGE = "rgba(241,184,74,1)";
-const DARK_ORANGE = "rgba(207,113,8,1)";
+import IconButtonWithGradient from "./IconButtonWithGradient";
 
 function Nav() {
   const theme = useTheme();
@@ -93,27 +90,12 @@ function Nav() {
             position={isSm ? "relative" : "absolute"}
             right={isSm ? 0 : 16}
           >
-            <IconButton
+            <IconButtonWithGradient
+              Icon={Instagram}
+              color1={theme.palette.secondary.light}
+              color2={theme.palette.secondary.dark}
               href={`https://www.instagram.com/${INSTAGRAM_HANDLE}/`}
-              target="_blank"
-              sx={{
-                backgroundcolor: "primary",
-                backgroundImage: `linear-gradient(to bottom, ${theme.palette.secondary.light}, ${theme.palette.secondary.dark})`,
-                backgroundSize: "100%",
-                backgroundRepeat: "repeat",
-                backgroundClip: "text",
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
-              }}
-            >
-              <svg width={0} height={0}>
-                <linearGradient id="linearColors" x1={0} y1={1} x2={1} y2={0}>
-                  <stop offset={0} stopColor={LIGHT_ORANGE} />
-                  <stop offset={1} stopColor={DARK_ORANGE} />
-                </linearGradient>
-              </svg>
-              <Instagram fontSize="small" sx={{ fill: "url(#linearColors)" }} />
-            </IconButton>
+            />
           </Box>
         </Stack>
       </Toolbar>
