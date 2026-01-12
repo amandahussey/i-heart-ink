@@ -1,6 +1,6 @@
 import { Instagram } from "@mui/icons-material";
 import { IconButton, Stack, Typography } from "@mui/material";
-import { INSTAGRAM_HANDLE } from "./consts";
+import { INSTAGRAM_HANDLE } from "../consts";
 
 const Footer = () => {
   return (

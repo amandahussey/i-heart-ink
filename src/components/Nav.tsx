@@ -8,7 +8,7 @@ import {
   useTheme,
 } from "@mui/material";
 import { Instagram } from "@mui/icons-material";
-import { INSTAGRAM_HANDLE } from "./consts";
+import { INSTAGRAM_HANDLE } from "../consts";
 import { NavContext } from "./NavContext";
 import { useContext } from "react";
 import IconButtonWithGradient from "./IconButtonWithGradient";

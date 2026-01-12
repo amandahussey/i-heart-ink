@@ -2,7 +2,7 @@ import { useRef, useState } from "react";
 import { HashRouter, Route, Routes } from "react-router-dom";
 import { Stack, ThemeProvider } from "@mui/material";
 
-import { theme } from "./theme";
+import { theme } from "../theme";
 
 import Nav from "./Nav";
 import ScrollToTop from "./ScrollToTop";

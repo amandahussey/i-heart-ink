@@ -1,6 +1,6 @@
 import { Stack } from "@mui/material";
-import jesus from "./assets/jesus.jpg";
-import queen from "./assets/queen.jpg";
+import jesus from "../assets/jesus.jpg";
+import queen from "../assets/queen.jpg";
 
 import "./Gallery.css";
 

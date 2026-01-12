@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { Box, Stack, useMediaQuery, useTheme } from "@mui/material";
-import iHeartInk from "./assets/i-heart-ink.jpg";
+import iHeartInk from "../assets/i-heart-ink.jpg";
 import Gallery from "./Gallery";
 import { NavContext } from "./NavContext";
 
