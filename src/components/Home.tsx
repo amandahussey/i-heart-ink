@@ -3,6 +3,7 @@ import { Box, Stack, useMediaQuery, useTheme } from "@mui/material";
 import iHeartInk from "../assets/i-heart-ink.jpg";
 import Gallery from "./Gallery";
 import { NavContext } from "../contexts/NavContext";
+import { NAV_HEIGHT } from "../constants";
 
 const Home = () => {
   const theme = useTheme();
@@ -25,6 +26,8 @@ const Home = () => {
             width: isSm ? "90vw" : "60vw",
             maxWidth: 600,
             objectFit: "contain",
+            position: "relative",
+            top: `-${NAV_HEIGHT}`, // offset to account for nav height
           }}
         />
       </Box>

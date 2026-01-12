@@ -1,10 +1,15 @@
 import { Instagram } from "@mui/icons-material";
 import { IconButton, Stack, Typography } from "@mui/material";
-import { INSTAGRAM_HANDLE } from "../consts";
+import { INSTAGRAM_HANDLE } from "../constants";
 
 const Footer = () => {
   return (
-    <Stack alignItems="center" spacing={1} mt={4}>
+    <Stack
+      direction="row"
+      justifyContent="center"
+      alignItems="center"
+      spacing={1}
+    >
       <Typography fontSize={12}>Copyright &copy; 2026 I Heart Ink</Typography>
       <IconButton
         href={`https://www.instagram.com/${INSTAGRAM_HANDLE}/`}

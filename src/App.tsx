@@ -27,12 +27,12 @@ function App() {
           <Stack
             minHeight="100vh"
             width="100%"
-            style={{ background: "black", color: "#E6FFFE", paddingBottom: 40 }}
+            style={{ background: "black", color: "#E6FFFE" }}
           >
             <LightEffect />
             <Nav />
             <ScrollToTop />
-            <Box mt={4} flexGrow={1}>
+            <Box flexGrow={1}>
               <Routes>
                 <Route path="/artist" element={<AboutArtist />} />
                 <Route path="/booking" element={<Booking />} />
