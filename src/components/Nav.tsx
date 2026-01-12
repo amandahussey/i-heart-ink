@@ -13,6 +13,8 @@ import { NavContext } from "../contexts/NavContext";
 import { useContext } from "react";
 import IconButtonWithGradient from "./IconButtonWithGradient";
 
+const PADDING_FOR_NAV_SCROLL = 100;
+
 function Nav() {
   const theme = useTheme();
   const isSm = useMediaQuery(theme.breakpoints.down("sm"));
@@ -28,7 +30,11 @@ function Nav() {
   const handleClickNavItem = (index: number) => {
     setActiveTab(index);
     if (index === 0 && startOfWorkRef?.current) {
-      startOfWorkRef.current.scrollIntoView({ behavior: "smooth" });
+      const position = startOfWorkRef.current.offsetTop;
+      window.scrollTo({
+        top: position - PADDING_FOR_NAV_SCROLL,
+        behavior: "smooth",
+      });
     }
   };
 
@@ -75,7 +81,9 @@ function Nav() {
                 key={index}
                 sx={{
                   ...navButtonStyle,
-                  ...{ fontWeight: activeTab === index ? "500" : "normal" },
+                  ...{
+                    fontWeight: activeTab === index ? "500" : "normal",
+                  },
                 }}
                 onClick={() => handleClickNavItem(index)}
               >
