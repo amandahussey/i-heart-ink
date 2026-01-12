@@ -10,32 +10,57 @@ import {
 import { Instagram } from "@mui/icons-material";
 import { INSTAGRAM_HANDLE } from "../constants";
 import { NavContext } from "../contexts/NavContext";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import IconButtonWithGradient from "./IconButtonWithGradient";
+import { useNavigate } from "react-router-dom";
 
 const PADDING_FOR_NAV_SCROLL = 100;
 
 function Nav() {
+  const navigate = useNavigate();
+
   const theme = useTheme();
   const isSm = useMediaQuery(theme.breakpoints.down("sm"));
 
   const { activeTab, setActiveTab, startOfWorkRef } = useContext(NavContext);
 
   const navItems = [
-    { label: "Work", path: "/" },
-    { label: "Artist", path: "/#/artist" },
-    { label: "Booking", path: "/#/booking" },
+    { label: "Work", path: "/work" },
+    { label: "Artist", path: "/artist" },
+    { label: "Booking", path: "/booking" },
   ];
 
-  const handleClickNavItem = (index: number) => {
-    setActiveTab(index);
-    if (index === 0 && startOfWorkRef?.current) {
-      const position = startOfWorkRef.current.offsetTop;
-      window.scrollTo({
-        top: position - PADDING_FOR_NAV_SCROLL,
-        behavior: "smooth",
-      });
+  // On mount, check and set active tab based on current path
+  useEffect(() => {
+    const currentPath = window.location.hash.replace("#", "");
+    const foundIndex = navItems.findIndex((item) => item.path === currentPath);
+    if (foundIndex !== -1) {
+      setActiveTab(foundIndex);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  const handleClickNavItem = (index: number) => {
+    // Compare current path to new path to determine behavior
+    const currentPath = navItems[activeTab].path;
+    const newPath = navItems[index].path;
+
+    if (currentPath === newPath && newPath === "/") {
+      // Scroll to top of work section if already on work page
+      if (startOfWorkRef?.current) {
+        window.scrollTo({
+          top: startOfWorkRef.current.offsetTop - PADDING_FOR_NAV_SCROLL,
+          behavior: "smooth",
+        });
+      }
+      return;
+    }
+
+    // Navigate to new page
+    navigate(newPath, { replace: false });
+
+    // Finally, set new active tab index
+    setActiveTab(index);
   };
 
   // Adds linear gradient to button text
@@ -60,6 +85,7 @@ function Nav() {
         background: "black",
         alignSelf: "center",
         zIndex: 1,
+        position: "fixed",
       }}
     >
       <Toolbar disableGutters>
@@ -82,13 +108,10 @@ function Nav() {
                 sx={{
                   ...navButtonStyle,
                   ...{
-                    fontWeight: activeTab === index ? "500" : "normal",
+                    fontWeight: activeTab === index ? "700" : "normal",
                   },
                 }}
-                onClick={
-                  item.path ? undefined : () => handleClickNavItem(index)
-                }
-                href={item.path}
+                onClick={() => handleClickNavItem(index)}
               >
                 {item.label}
               </Button>

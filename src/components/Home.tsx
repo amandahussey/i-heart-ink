@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { Box, Stack, useMediaQuery, useTheme } from "@mui/material";
 import iHeartInk from "../assets/i-heart-ink.jpg";
 import Gallery from "./Gallery";
@@ -10,6 +10,18 @@ const Home = () => {
   const isSm = useMediaQuery(theme.breakpoints.down("sm"));
 
   const { startOfWorkRef } = useContext(NavContext);
+
+  // If navigating via "/", simply scroll to top of Home
+  // If navigating via "/#/work", scroll to work section
+  useEffect(() => {
+    const currentPath = window.location.hash.replace("#", "");
+    if (currentPath === "/work" && startOfWorkRef?.current) {
+      window.scrollTo({
+        top: startOfWorkRef.current.offsetTop - NAV_HEIGHT,
+        behavior: "smooth",
+      });
+    }
+  }, [startOfWorkRef]);
 
   return (
     <Stack alignItems="center">

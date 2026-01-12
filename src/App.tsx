@@ -13,6 +13,7 @@ import Home from "./components/Home";
 import AboutArtist from "./components/AboutArtist";
 import Booking from "./components/Booking";
 import Footer from "./components/Footer";
+import { NAV_HEIGHT } from "./constants";
 
 function App() {
   const [activeTab, setActiveTab] = useState(0);
@@ -32,10 +33,11 @@ function App() {
             <LightEffect />
             <Nav />
             <ScrollToTop />
-            <Box flexGrow={1}>
+            <Box flexGrow={1} style={{ marginTop: NAV_HEIGHT }}>
               <Routes>
                 <Route path="/artist" element={<AboutArtist />} />
                 <Route path="/booking" element={<Booking />} />
+                <Route path="/work" element={<Home />} />
                 <Route path="/" element={<Home />} />
               </Routes>
             </Box>
