@@ -15,7 +15,7 @@ const IMAGES = [
 
 const Gallery = () => {
   return (
-    <Stack spacing={10} className="gallery">
+    <Stack spacing={10} className="gallery" pb={12}>
       {IMAGES.map((img) => (
         <img key={img.src} src={img.src} loading="lazy" />
       ))}

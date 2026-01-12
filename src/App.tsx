@@ -9,6 +9,7 @@ import ScrollToTop from "./ScrollToTop";
 import Home from "./Home";
 import { NavContext } from "./NavContext";
 import LightEffect from "./LightEffect";
+import Footer from "./Footer";
 
 function App() {
   const [activeTab, setActiveTab] = useState(0);
@@ -34,6 +35,7 @@ function App() {
             <Route path="/gallery" element={<Gallery />} /> */}
               <Route path="/" element={<Home />} />
             </Routes>
+            <Footer />
           </Stack>
         </NavContext.Provider>
       </ThemeProvider>
