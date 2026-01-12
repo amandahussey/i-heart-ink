@@ -1,6 +1,6 @@
 import { useRef, useState } from "react";
 import { HashRouter, Route, Routes } from "react-router-dom";
-import { Stack, ThemeProvider, useMediaQuery } from "@mui/material";
+import { Stack, ThemeProvider } from "@mui/material";
 
 import { theme } from "./theme";
 
@@ -11,7 +11,6 @@ import { NavContext } from "./NavContext";
 import LightEffect from "./LightEffect";
 
 function App() {
-  const isSm = useMediaQuery(theme.breakpoints.down("sm"));
   const [activeTab, setActiveTab] = useState(0);
   const startOfWorkRef = useRef(null as null | HTMLElement);
 
