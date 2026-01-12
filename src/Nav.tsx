@@ -49,7 +49,12 @@ function Nav() {
   return (
     <Container
       maxWidth="xl"
-      style={{ position: "fixed", background: "black", alignSelf: "center" }}
+      style={{
+        position: "fixed",
+        background: "black",
+        alignSelf: "center",
+        zIndex: 1,
+      }}
     >
       <Toolbar disableGutters>
         {/* Separate main buttons from instagram */}
