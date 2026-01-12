@@ -13,6 +13,9 @@ import { INSTAGRAM_HANDLE } from "./consts";
 import { NavContext } from "./NavContext";
 import { useContext } from "react";
 
+const LIGHT_ORANGE = "rgba(241,184,74,1)";
+const DARK_ORANGE = "rgba(207,113,8,1)";
+
 function Nav() {
   const theme = useTheme();
   const isSm = useMediaQuery(theme.breakpoints.down("sm"));
@@ -33,17 +36,17 @@ function Nav() {
   };
 
   const navButtonStyle = {
-    // my: 2,
-    // display: "block",
-    // fontSize: isXs ? 16 : 20,
-    // backgroundcolor: "primary",
-    // backgroundImage: `linear-gradient(to bottom, ${theme.palette.secondary.light}, ${theme.palette.secondary.dark})`,
-    // backgroundSize: "100%",
-    // backgroundRepeat: "repeat",
-    // backgroundClip: "text",
-    // WebkitBackgroundClip: "text",
-    // WebkitTextFillColor: "transparent",
-    // cursor: "pointer",
+    my: 2,
+    display: "block",
+    fontSize: isSm ? 16 : 20,
+    backgroundcolor: "primary",
+    backgroundImage: `linear-gradient(to bottom, ${theme.palette.secondary.light}, ${theme.palette.secondary.dark})`,
+    backgroundSize: "100%",
+    backgroundRepeat: "repeat",
+    backgroundClip: "text",
+    WebkitBackgroundClip: "text",
+    WebkitTextFillColor: "transparent",
+    cursor: "pointer",
   };
 
   return (
@@ -93,8 +96,23 @@ function Nav() {
             <IconButton
               href={`https://www.instagram.com/${INSTAGRAM_HANDLE}/`}
               target="_blank"
+              sx={{
+                backgroundcolor: "primary",
+                backgroundImage: `linear-gradient(to bottom, ${theme.palette.secondary.light}, ${theme.palette.secondary.dark})`,
+                backgroundSize: "100%",
+                backgroundRepeat: "repeat",
+                backgroundClip: "text",
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+              }}
             >
-              <Instagram fontSize="small" sx={{ color: "primary.light" }} />
+              <svg width={0} height={0}>
+                <linearGradient id="linearColors" x1={0} y1={1} x2={1} y2={0}>
+                  <stop offset={0} stopColor={LIGHT_ORANGE} />
+                  <stop offset={1} stopColor={DARK_ORANGE} />
+                </linearGradient>
+              </svg>
+              <Instagram fontSize="small" sx={{ fill: "url(#linearColors)" }} />
             </IconButton>
           </Box>
         </Stack>
