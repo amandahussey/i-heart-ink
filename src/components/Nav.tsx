@@ -22,9 +22,9 @@ function Nav() {
   const { activeTab, setActiveTab, startOfWorkRef } = useContext(NavContext);
 
   const navItems = [
-    { label: "Work", path: "/work" },
-    { label: "Artist", path: "/artist" },
-    { label: "Booking", path: "/booking" },
+    { label: "Work", path: "/" },
+    { label: "Artist", path: "/#/artist" },
+    { label: "Booking", path: "/#/booking" },
   ];
 
   const handleClickNavItem = (index: number) => {
@@ -38,6 +38,7 @@ function Nav() {
     }
   };
 
+  // Adds linear gradient to button text
   const navButtonStyle = {
     my: 2,
     display: "block",
@@ -56,7 +57,6 @@ function Nav() {
     <Container
       maxWidth="xl"
       style={{
-        position: "fixed",
         background: "black",
         alignSelf: "center",
         zIndex: 1,
@@ -85,7 +85,10 @@ function Nav() {
                     fontWeight: activeTab === index ? "500" : "normal",
                   },
                 }}
-                onClick={() => handleClickNavItem(index)}
+                onClick={
+                  item.path ? undefined : () => handleClickNavItem(index)
+                }
+                href={item.path}
               >
                 {item.label}
               </Button>

@@ -2,14 +2,17 @@ import { useRef, useState } from "react";
 import { HashRouter, Route, Routes } from "react-router-dom";
 import { Stack, ThemeProvider } from "@mui/material";
 
-import { theme } from "../theme";
+import { theme } from "./theme";
 
-import Nav from "./Nav";
-import ScrollToTop from "./ScrollToTop";
-import Home from "./Home";
-import { NavContext } from "../contexts/NavContext";
-import LightEffect from "./LightEffect";
-import Footer from "./Footer";
+import { NavContext } from "./contexts/NavContext";
+
+import LightEffect from "./components/LightEffect";
+import Nav from "./components/Nav";
+import ScrollToTop from "./components/ScrollToTop";
+import Home from "./components/Home";
+import AboutArtist from "./components/AboutArtist";
+import Booking from "./components/Booking";
+import Footer from "./components/Footer";
 
 function App() {
   const [activeTab, setActiveTab] = useState(0);
@@ -30,9 +33,8 @@ function App() {
             <Nav />
             <ScrollToTop />
             <Routes>
-              {/* <Route path="/artist" element={<About />} />
-            <Route path="/booking" element={<Booking />} />
-            <Route path="/gallery" element={<Gallery />} /> */}
+              <Route path="/artist" element={<AboutArtist />} />
+              <Route path="/booking" element={<Booking />} />
               <Route path="/" element={<Home />} />
             </Routes>
             <Footer />
