@@ -1,6 +1,6 @@
 import { useRef, useState } from "react";
 import { HashRouter, Route, Routes } from "react-router-dom";
-import { Stack, ThemeProvider } from "@mui/material";
+import { Box, Stack, ThemeProvider } from "@mui/material";
 
 import { theme } from "./theme";
 
@@ -32,11 +32,14 @@ function App() {
             <LightEffect />
             <Nav />
             <ScrollToTop />
-            <Routes>
-              <Route path="/artist" element={<AboutArtist />} />
-              <Route path="/booking" element={<Booking />} />
-              <Route path="/" element={<Home />} />
-            </Routes>
+            <Box mt={4} flexGrow={1}>
+              <Routes>
+                <Route path="/artist" element={<AboutArtist />} />
+                <Route path="/booking" element={<Booking />} />
+                <Route path="/" element={<Home />} />
+              </Routes>
+            </Box>
+
             <Footer />
           </Stack>
         </NavContext.Provider>
